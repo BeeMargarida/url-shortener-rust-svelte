@@ -16,6 +16,11 @@
     function onClick() {
         makeRequest();
     }
+
+    function onGoBackClick() {
+        url = "";
+        shortenId = null;
+    }
 </script>
 
 <div class="page">
@@ -25,7 +30,10 @@
         </div>
 
         {#if shortenId}
-            <a href={buildShortUrl()} target="_blank">{buildShortUrl()}</a>
+            <div class="link-container">
+                <a class="link" href={buildShortUrl()} target="_blank">{buildShortUrl()}</a>
+                <button class="button" on:click={onGoBackClick}>Go back</button>
+            </div>
         {:else}
             <div class="input-container">
                 <input
@@ -99,6 +107,26 @@
 
     .input:focus {
         border-color: #5ba4f6;
+    }
+
+    .link-container {
+        display: flex;
+        margin: 30px 20px 30px 20px;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .link {
+        color: #4b8dd7;
+        font-family: "Roboto", sans-serif;
+        cursor: pointer;
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.1s ease-in, color 0.1s ease-in;
+    }
+
+    .link:hover {
+        border-bottom: 1px solid #4b8dd7;
     }
 
     .button {
