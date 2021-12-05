@@ -35,13 +35,7 @@ fn rocket() -> _ {
         .mount("/", routes![shorten, redirect])
         .mount(
             "/",
-            if cfg!(debug_assertions) {
-                // debug mode, serve relative to crate root
-                FileServer::from(rocket::fs::relative!("/svelte/build"))
-            } else {
-                // dockerized, serve from absolute path
-                FileServer::from("/app/static")
-            },
+            FileServer::from(rocket::fs::relative!("/svelte/build"))
         )
 }
 
