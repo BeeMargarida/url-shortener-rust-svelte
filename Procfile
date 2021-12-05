@@ -1,1 +1,1 @@
-web: ROCKET_PORT=80 ROCKET_KEEP_ALIVE=0 ROCKET_ENV=prod ./target/release/url-shortener-rust-svelte
+web: ROCKET_PORT=80 ROCKET_KEEP_ALIVE=0 ROCKET_ENV=prod ./target/release/url-shortener
