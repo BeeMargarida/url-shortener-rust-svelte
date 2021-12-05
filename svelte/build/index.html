@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="description" content="" />
+		<link rel="icon" href="/favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
+		
+
+		
+
+		<link rel="modulepreload" href="/_app/start-5f7270df.js">
+		<link rel="modulepreload" href="/_app/chunks/vendor-4fd47085.js">
+		<link rel="modulepreload" href="/_app/layout.svelte-4d640c74.js">
+		<link rel="modulepreload" href="/_app/pages/index.svelte-a5edff22.js">
+		<link rel="stylesheet" href="/_app/assets/start-61d1577b.css">
+		<link rel="stylesheet" href="/_app/assets/pages/index.svelte-b5cc3177.css">
+
+		<script type="module">
+			import { start } from "/_app/start-5f7270df.js";
+			start({
+				target: document.querySelector("#svelte"),
+				paths: {"base":"","assets":""},
+				session: {},
+				host: location.host,
+				route: true,
+				spa: false,
+				trailing_slash: "never",
+				hydrate: {
+					status: 200,
+					error: null,
+					nodes: [
+						import("/_app/layout.svelte-4d640c74.js"),
+						import("/_app/pages/index.svelte-a5edff22.js")
+					],
+					page: {
+						host: location.host, // TODO this is redundant
+						path: "\u002F",
+						query: new URLSearchParams(""),
+						params: {}
+					}
+				}
+			});
+		</script>
+	</head>
+	<body style="background-color: #ececec;">
+		<div id="svelte">
+
+
+<div class="page svelte-pv721g"><div class="container svelte-pv721g"><div class="container-title svelte-pv721g"><h1 class="title svelte-pv721g">URL Shortener</h1></div>
+
+        <div class="input-container svelte-pv721g"><input class="input svelte-pv721g" type="text" placeholder="Place were the URL you wish to shorten" value="">
+                <button class="button svelte-pv721g">Shorten</button></div></div>
+</div>
+
+
+
+			
+		</div>
+	</body>
+</html>
