@@ -1,12 +1,19 @@
 <script>
     let url = "";
     let shortenId = null;
+    let error = null;
 
     async function makeRequest() {
         let response = await fetch(`/api/shorten?url=${url}`, {
             method: "POST",
         });
-        shortenId = await response.text();
+
+        if (response.ok) {
+            shortenId = await response.text();
+            return;
+        }
+        
+        error = await response.text();
     }
 
     function buildShortUrl() {
@@ -38,9 +45,11 @@
             <div class="input-container">
                 <input
                     class="input"
+                    class:error="{Boolean(error)}"
                     type="text"
                     placeholder="Place were the URL you wish to shorten"
                     bind:value={url}
+                    on:change={() => { error = null }}
                 />
                 <button class="button" on:click={onClick}>Shorten</button>
             </div>
@@ -103,6 +112,10 @@
         align-self: center;
         font-family: "Roboto", sans-serif;
         font-weight: 400;
+    }
+
+    .input.error {
+        border: 1px solid #f58a84;
     }
 
     .input:focus {

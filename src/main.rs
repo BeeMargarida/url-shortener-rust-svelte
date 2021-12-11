@@ -41,7 +41,7 @@ fn rocket() -> _ {
             } else {
                 // dockerized, serve from absolute path
                 FileServer::from("/app/svelte/build")
-            },
+            }
         )
 }
 
